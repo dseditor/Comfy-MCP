@@ -1,6 +1,6 @@
 # ComfyUI MCP Server
 
-[中文说明](#中文说明) | [English](#english)
+[中文说明](#中文說明) | [English](#english)
 
 ---
 
@@ -113,109 +113,109 @@ MIT
 
 ---
 
-## 中文说明
+## 中文說明
 
-ComfyUI MCP 服务器 - 通过模型上下文协议（MCP）无缝整合 AI 助手（Claude Code、Claude Desktop、Gemini CLI）与 ComfyUI。
+ComfyUI MCP 服務器 - 通過模型上下文協議（MCP）無縫整合 AI 助手（Claude Code、Claude Desktop、Gemini CLI）與 ComfyUI。
 
-### 功能特点
+### 功能特點
 
-- 🎨 **ComfyUI 整合**: 通过 MCP 协议连接 AI 助手与 ComfyUI
-- 🔧 **自定义节点**: 在 ComfyUI 中可视化配置 MCP 参数
-- 📦 **便携式设置**: 使用相对路径，便于环境迁移
-- 🚀 **自动启动**: AI 助手需要时自动启动 MCP 服务器
-- ⚙️ **自动配置**: 自动安装并配置 MCP 到 AI 助手
+- 🎨 **ComfyUI 整合**: 通過 MCP 協議連接 AI 助手與 ComfyUI
+- 🔧 **自定義節點**: 在 ComfyUI 中可視化配置 MCP 參數
+- 📦 **便攜式設置**: 使用相對路徑，便於環境遷移
+- 🚀 **自動啓動**: AI 助手需要時自動啓動 MCP 服務器
+- ⚙️ **自動配置**: 自動安裝並配置 MCP 到 AI 助手
 
-### 快速开始
+### 快速開始
 
-#### 1. 启动 ComfyUI
+#### 1. 啓動 ComfyUI
 
-使用普通的启动脚本即可（不需要特殊的 MCP 启动器）：
+使用普通的啓動腳本即可（不需要特殊的 MCP 啓動器）：
 
 \`\`\`batch
 # Windows
 run_nvidia_gpu.bat
 
-# 或者使用你平时使用的任何 ComfyUI 启动脚本
+# 或者使用你平時使用的任何 ComfyUI 啓動腳本
 \`\`\`
 
 #### 2. 在 ComfyUI 中配置 MCP
 
-在工作流中添加 **MCP Config Generator** 节点：
+在工作流中添加 **MCP Config Generator** 節點：
 
-1. 在 ComfyUI 中添加 \`MCP Config Generator\` 节点
-2. 配置节点参数：
-   - **workflow_file**: 选择工作流 JSON 文件
-   - **prompt_node_id**: 文本输入节点 ID（例如 "45"）
-   - **output_node_id**: 图像输出节点 ID（例如 "9"）
-   - **comfy_url**: ComfyUI 服务器 URL（默认：\`http://127.0.0.1:8188\`）
-   - **auto_install**: ✅ 启用（首次设置时）
-   - **auto_update_claude_code**: ✅ 启用（如果使用 Claude Code）
-   - **auto_update_claude_desktop**: ✅ 启用（如果使用 Claude Desktop）
-   - **auto_update_gemini_cli**: ✅ 启用（如果使用 Gemini CLI）
-3. 执行工作流
+1. 在 ComfyUI 中添加 \`MCP Config Generator\` 節點
+2. 配置節點參數：
+   - **workflow_file**: 選擇工作流 JSON 文件
+   - **prompt_node_id**: 文本輸入節點 ID（例如 "45"）
+   - **output_node_id**: 圖像輸出節點 ID（例如 "9"）
+   - **comfy_url**: ComfyUI 服務器 URL（默認：\`http://127.0.0.1:8188\`）
+   - **auto_install**: ✅ 啓用（首次設置時）
+   - **auto_update_claude_code**: ✅ 啓用（如果使用 Claude Code）
+   - **auto_update_claude_desktop**: ✅ 啓用（如果使用 Claude Desktop）
+   - **auto_update_gemini_cli**: ✅ 啓用（如果使用 Gemini CLI）
+3. 執行工作流
 
-节点会自动：
-- 安装 MCP 服务器模块
+節點會自動：
+- 安裝 MCP 服務器模塊
 - 生成配置文件
 - 更新 AI 助手配置文件
 
 #### 3. 在 AI 助手中使用
 
-完成！MCP 服务器会在你使用 AI 助手时自动启动。
+完成！MCP 服務器會在你使用 AI 助手時自動啓動。
 
 **在 Claude Code 或 Claude Desktop 中：**
 \`\`\`
-生成一张阳光花园中的猫的图片
+生成一張陽光花園中的貓的圖片
 \`\`\`
 
-AI 助手会自动：
-1. 启动 MCP 服务器（如果未运行）
-2. 调用 ComfyUI 生成图片
-3. 返回生成的图片
+AI 助手會自動：
+1. 啓動 MCP 服務器（如果未運行）
+2. 調用 ComfyUI 生成圖片
+3. 返回生成的圖片
 
-### 手动安装（可选）
+### 手動安裝（可選）
 
-如果自动安装不起作用，可以手动安装：
+如果自動安裝不起作用，可以手動安裝：
 
 \`\`\`batch
-cd ComfyUI所在路径/custom_nodes/ComfyUI-MCP
+cd ComfyUI所在路徑/custom_nodes/ComfyUI-MCP
 python -m pip install -r requirements.txt
 python -m pip install -e .
 \`\`\`
 
-### 系统要求
+### 系統要求
 
 - Python >= 3.10
 - ComfyUI
 - Claude Code、Claude Desktop 或 Gemini CLI
 
-### 架构说明
+### 架構說明
 
-本项目采用双层架构：
+本項目採用雙層架構：
 
 \`\`\`
 ComfyUI-MCP/
-├── src/comfy_mcp_server/     ← MCP 服务器核心（由 AI 助手自动启动）
-├── nodes/mcp_config_node.py  ← ComfyUI 节点（用于配置）
+├── src/comfy_mcp_server/     ← MCP 服務器核心（由 AI 助手自動啓動）
+├── nodes/mcp_config_node.py  ← ComfyUI 節點（用於配置）
 ├── workflow/                 ← 工作流 JSON 文件
 ├── pyproject.toml           ← 包配置
-└── requirements.txt         ← 依赖项
+└── requirements.txt         ← 依賴項
 \`\`\`
 
 ### 故障排除
 
-**MCP 服务器无法工作？**
-1. 检查节点中是否启用了 \`auto_install\`
-2. 首次安装后重启 ComfyUI
-3. 验证模块已安装：\`python -m pip list | grep comfy-mcp-server\`
+**MCP 服務器無法工作？**
+1. 檢查節點中是否啓用了 \`auto_install\`
+2. 首次安裝後重啓 ComfyUI
+3. 驗證模塊已安裝：\`python -m pip list | grep comfy-mcp-server\`
 
-**AI 助手找不到 MCP 服务器？**
-1. 检查是否为你的 AI 助手启用了 \`auto_update_*\`
-2. 配置后重启 AI 助手
-3. 手动检查配置文件：
+**AI 助手找不到 MCP 服務器？**
+1. 檢查是否爲你的 AI 助手啓用了 \`auto_update_*\`
+2. 配置後重啓 AI 助手
+3. 手動檢查配置文件：
    - Claude Code: \`~/.config/claude-code/mcp.json\`
    - Claude Desktop: \`%APPDATA%/Claude/claude_desktop_config.json\`
 
-### 许可证
+### 許可證
 
 MIT
