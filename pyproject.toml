@@ -1,0 +1,51 @@
+[project]
+name = "comfy-mcp-server"
+version = "0.0.1"
+description = "Simple MCP Server for ComfyUI text to image Workflow - ComfyUI Node Integration , Based on lalanikarim/comfy-mcp-server work"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+
+dependencies = [
+    "langchain>=0.3.19",
+    "langchain-ollama>=0.2.3",
+    "mcp[cli]>=1.2.1",
+    "Pillow>=10.0.0",
+]
+
+authors = [
+    {name = "dseditor", email = "comfyuimixer1231@gmail.com"},
+]
+
+maintainers = [
+    {name = "dseditor", email = "comfyuimixer1231@gmail.com"},
+]
+
+[project.urls]
+Homepage = "https://github.com/dseditor/Comfy-MCP/"
+Repository = "https://github.com/dseditor/Comfy-MCP/"
+Documentation = "https://github.com/dseditor/Comfy-MCP/wiki"
+"Bug Tracker" = "https://github.com/dseditor/Comfy-MCP/issues"
+"Original Project" = "https://github.com/lalanikarim/comfy-mcp-server"
+
+# MCP Server entry point - required for `python -m comfy_mcp_server`
+[project.scripts]
+comfy-mcp-server = "comfy_mcp_server:run_server"
+
+# Build system configuration - required for pip install
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Package source location - tells pip where to find the code
+[tool.hatch.build.targets.wheel]
+packages = ["src/comfy_mcp_server"]
+
+# ComfyUI Registry configuration
+[tool.comfy]
+PublisherId = "dseditor"
+DisplayName = "ComfyUI MCP Server"
+Icon = ""
+includes = []
+# requires-comfyui = ">=1.0.0"

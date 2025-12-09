@@ -1,0 +1,71 @@
+# Python generated files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+wheels/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE and Editor files
+.vscode/
+.idea/
+.aider*
+*.swp
+*.swo
+*~
+.envrc
+
+# User-specific Claude Code configuration
+.claude/
+
+# Generated configuration files (created by the node at runtime)
+mcp_config.ini
+claude_desktop_mcp_config*.json
+gemini_settings*.json
+temp_mcp_config.json
+
+# Generated images
+generated_images/
+
+# Log files
+*.log
+mcp_server.log
+
+# Backup files
+backup/
+*.backup
+*.bak
+*.old
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Development lock files (optional - uncomment if you want to track it)
+# uv.lock
+
+# Test and temporary files
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.hypothesis/
+.tox/
+*.zip
+GIT_COMMIT_GUIDE.md
