@@ -73,7 +73,7 @@
   },
   "44": {
     "inputs": {
-      "seed": 410513707389275,
+      "seed": 965068555962770,
       "steps": 9,
       "cfg": 1,
       "sampler_name": "res_multistep",
@@ -103,7 +103,7 @@
   },
   "45": {
     "inputs": {
-      "text": "Latina female with thick wavy hair, harbor boats and pastel houses behind. Breezy seaside light, warm tones, cinematic close-up.",
+      "text": "Japanese female with thick wavy hair, harbor boats and pastel houses behind. Breezy seaside light, warm tones, cinematic close-up.",
       "clip": [
         "39",
         0
@@ -116,7 +116,7 @@
   },
   "46": {
     "inputs": {
-      "unet_name": "z-image-turbo_fp8_scaled_e4m3fn_KJ.safetensors",
+      "unet_name": "z_image_turbo_bf16.safetensors",
       "weight_dtype": "default"
     },
     "class_type": "UNETLoader",
