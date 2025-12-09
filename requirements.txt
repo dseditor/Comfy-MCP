@@ -3,3 +3,4 @@ langchain-ollama>=0.2.3
 mcp[cli]>=1.2.1
 Pillow>=10.0.0
 hatchling
+editables
