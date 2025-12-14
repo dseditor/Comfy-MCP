@@ -1,0 +1,111 @@
+{
+  "id": "9f774f6e-f4ce-4c36-b9fc-8f9a1f69b616",
+  "revision": 0,
+  "last_node_id": 2,
+  "last_link_id": 1,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "PreviewAny",
+      "pos": [
+        706.6671295166016,
+        128.0001678466797
+      ],
+      "size": [
+        393.3333740234375,
+        322.0000305175781
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 1
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 1,
+      "type": "MCPConfigGenerator",
+      "pos": [
+        357.3338165283203,
+        133.33348083496094
+      ],
+      "size": [
+        321.470703125,
+        342
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "status_text",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "json_config",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-mcp-server",
+        "ver": "0.0.4",
+        "Node name for S&R": "MCPConfigGenerator"
+      },
+      "widgets_values": [
+        "image_z_image_turbo.json",
+        "45",
+        "9",
+        "http://127.0.0.1:8188",
+        60,
+        2,
+        "url",
+        "ClaudeDesktop",
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        50.66618347167969,
+        135.99989318847656
+      ]
+    },
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "frontendVersion": "1.32.10"
+  },
+  "version": 0.4
+}
