@@ -1,6 +1,6 @@
 [project]
 name = "comfy-mcp-server"
-version = "0.0.4"
+version = "0.0.5"
 description = "Simple MCP Server for ComfyUI text to image Workflow - ComfyUI Node Integration , Based on lalanikarim/comfy-mcp-server work"
 readme = "README.md"
 requires-python = ">=3.10"
